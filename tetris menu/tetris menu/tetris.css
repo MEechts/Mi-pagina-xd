@@ -1,0 +1,71 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Press Start 2P', cursive;
+    background-color: #000;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    animation: backgroundGlow 5s infinite alternate;
+}
+
+@keyframes backgroundGlow {
+    from { background-color: #000; }
+    to { background-color: #1a1a1a; }
+}
+
+.menu-container {
+    text-align: center;
+}
+
+h1 {
+    font-size: 4rem;
+    margin-bottom: 2rem;
+    color: #0de9e9;
+    text-shadow: 2px 2px #333, 4px 4px #0de9e9;
+    animation: pulse 1.5s infinite;
+    transform: translateZ(0);
+    image-rendering: pixelated;
+}
+
+.menu-item.instruciones {
+    background-color: #041629;
+    font-weight: bold;
+}
+@keyframes pulse {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+}
+
+.menu-options {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.menu-item {
+    text-decoration: none;
+    color: #fff;
+    background: linear-gradient(45deg, #00d4ff, #8a2be2, #0de9e9);
+    background-size: 300%;
+    padding: 1rem 3rem;
+    border-radius: 0;
+    border: 4px solid #0de9e9;
+    transition: transform 0.3s, filter 0.3s;
+    box-shadow: 4px 4px #333;
+    animation: colorShift 3s infinite alternate;
+    transform: translateZ(0);
+    image-rendering: pixelated;
+}
+
+@keyframes colorShift {
+    from { filter: hue-rotate(0deg); }
+    to { filter: hue-rotate(360deg); }
+}
+
+.menu-item:hover {
+    transform: translateY(-5px) scale(1.05);
+    filter: brightness(1.2);
+}

@@ -1,0 +1,80 @@
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+body, html {
+    background: url("fonodo.gif") center center; 
+    background-size: cover;
+    color: #fff;
+    font-family: 'Press Start 2P', cursive;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    overflow: hidden;
+}
+
+.contenedor {
+    background: rgba(0, 0, 0, 0.8);
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 0 20px yellow;
+    border: 4px solid yellow;
+    animation: parpadeo 1.5s infinite alternate;
+}
+
+h1 {
+    color: yellow;
+    text-shadow: 3px 3px 0px blue;
+    animation: aparecer 2s ease-in-out;
+}
+
+p {
+    color: #ffffff;
+    font-size: 14px;
+    animation: aparecer 3s ease-in-out;
+}
+
+.boton-start {
+    display: inline-block;
+    padding: 15px 30px;
+    margin-top: 20px;
+    background: yellow;
+    color: blue;
+    text-decoration: none;
+    font-size: 16px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px yellow;
+    transition: 0.3s;
+    position: relative;
+    overflow: hidden;
+    animation: salto 1s infinite alternate;
+}
+
+.boton-start:hover {
+    background: red;
+    box-shadow: 0 0 15px red;
+    color: white;
+}
+
+audio {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+}
+
+/* Animaciones */
+@keyframes parpadeo {
+    0% { box-shadow: 0 0 20px yellow; }
+    100% { box-shadow: 0 0 30px red; }
+}
+
+@keyframes aparecer {
+    0% { opacity: 0; transform: translateY(-20px); }
+    100% { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes salto {
+    0% { transform: translateY(0); }
+    100% { transform: translateY(-5px); }
+}

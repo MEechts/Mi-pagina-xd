@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Asteroids</title>
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+    <link rel="icon" href="logo.as.ico">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #0b214e;
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            flex-direction: column;
+            font-family: 'Press Start 2P', cursive;
+        }
+
+        .menu {
+            text-align: center;
+        }
+
+        button {
+            background-color: #0e0bd6;
+            border: none;
+            padding: 10px 20px;
+            margin: 10px;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 5px;
+            color: white;
+            font-family: 'Press Start 2P', cursive;
+        }
+
+        button:hover {
+            background-color: #1e058d;
+        }
+
+        canvas {
+            border: 2px solid white;
+            display: block;
+            margin: auto;
+            background-color: #111;
+        }
+
+        .info {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            font-size: 18px;
+        }
+
+        #gameOverScreen {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: white;
+            font-size: 40px;
+            font-family: 'Press Start 2P', cursive;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+            display: none;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <!-- Menú de Inicio -->
+    <div id="menu" class="menu">
+        <h1>Bienvenido a Asteroids</h1>
+        <button onclick="startGame()">Iniciar Juego</button>
+        <button onclick="showInstructions()">Instrucciones</button>
+        <button onclick="exitGame()">Salir</button>
+    </div>
+
+    <!-- Contenedor del juego (Oculto al inicio) -->
+    <div id="gameContainer" style="display: none;">
+        <canvas id="gameCanvas" width="800" height="600"></canvas>
+        <div class="info">Salud: <span id="health">200</span> / 200</div>
+        <audio id="loop" autoplay loop>
+            <source src="Song_asteroid.mp3" type="audio/mp3">
+            Tu navegador no soporta el elemento de audio.
+        </audio>
+        <div id="gameOverScreen">
+            GAME OVER
+            <div id="restartText">Presiona ENTER para reiniciar</div>
+        </div>
+    </div>
+
+    <script>
+        function startGame() {
+            document.getElementById("menu").style.display = "none"; 
+            document.getElementById("gameContainer").style.display = "block";
+            init(); // Iniciar el juego
+        }
+
+        function showInstructions() {
+            alert("Instrucciones:\n- Usa el mouse para rotar la nave.\n- Presiona W o ↑ para acelerar.\n- Dispara con ESPACIO o ENTER.\n- Evita los asteroides y sobrevive.");
+        }
+
+        function exitGame() {
+            alert("Saliendo del juego...");
+            window.close();
+        }
+    </script>
+
+    <script src="game.js"></script>
+</body>
+</html>

@@ -1,0 +1,28 @@
+body {
+    background-color: #0b214e;
+    color: rgb(12, 2, 70);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    font-family: Pixel, sans-serif;
+}
+
+.menu {
+    text-align: center;
+}
+
+button {
+    background-color: #0e0bd6;
+    border: none;
+    padding: 10px 20px;
+    margin: 10px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+button:hover {
+    background-color: #1e058d93;
+}
